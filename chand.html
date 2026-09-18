@@ -1,0 +1,1817 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="چاند کا عکس — احمد مسعود قریشی کا منتخب کلام، ایک ڈیجیٹل و پرنٹ ایڈیشن۔" />
+  <meta name="theme-color" content="#0b2b4c" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%99%3C/text%3E%3C/svg%3E" />
+  <title>چاند کا عکس — احمد مسعود قریشی</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* جمیل نوری نستعلیق — بنیادی فونٹ (دستیاب نہ ہونے کی صورت میں Noto Nastaliq Urdu کارآمد ہوگا) */
+    @font-face {
+      font-family: 'Jameel Noori Nastaleeq';
+      src: url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --primary: #2b6cb0;
+      --accent: #7c3aed;
+      --bg: #fff;
+      --text: #111;
+      --toolbar-h: 56px;
+      --toolbar-h-mobile: 96px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', "Noto Nastaliq Urdu Regular", serif;
+      font-size: 16pt;
+      line-height: 1.8;
+      direction: rtl;
+      unicode-bidi: plaintext;
+      margin: 0;
+      color: var(--text);
+      background: #f5f5f5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== زبان کے مطابق فونٹ / سمت ===== */
+    .lang-ur { direction: rtl; font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif; }
+    .lang-bn { direction: ltr; text-align: left; font-family: 'Noto Sans Bengali', 'Kalpurush', sans-serif; }
+    .lang-en { direction: ltr; text-align: left; font-family: 'Merriweather', Georgia, serif; }
+
+    .lang-bn .poem-body,
+    .lang-en .poem-body {
+      word-spacing: normal;
+      letter-spacing: normal;
+    }
+
+    @page {
+      size: A5;
+      margin: 16mm 14mm 16mm 14mm;
+    }
+
+    .page {
+      page-break-after: always;
+      background: #fff;
+      width: 94%;
+      max-width: 148mm;
+      margin: 8mm auto;
+      padding: 10mm 8mm;
+      box-shadow: 0 2mm 8mm rgba(0,0,0,.12);
+      border-radius: 4mm;
+      position: relative;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+        width: auto;
+      }
+      .toolbar, .edit-panel, .poem-actions, .status-msg {
+        display: none !important;
+      }
+      .page { page-break-after: always; }
+    }
+
+    /* ===== Toolbar ===== */
+    .toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #0b2b4c, #2b6cb0);
+      color: #fff;
+      padding: 10px 16px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      flex-wrap: wrap;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 14px;
+    }
+
+    .toolbar button {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.4);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .toolbar button:hover,
+    .toolbar button:focus-visible {
+      background: rgba(255,255,255,.3);
+    }
+    .toolbar button:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+    .toolbar button.active {
+      background: #f59e0b;
+      color: #111;
+      border-color: #f59e0b;
+    }
+
+    body.has-toolbar {
+      padding-top: var(--toolbar-h);
+    }
+
+    /* ===== Cover ===== */
+    .cover {
+      position: relative;
+      min-height: 220mm;
+      border-radius: 10mm;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 6mm 14mm rgba(0,0,0,.18);
+      background: linear-gradient(135deg, #0b2b4c 0%, #2b6cb0 35%, #7c3aed 70%, #f59e0b 100%);
+    }
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: -20mm;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 45%),
+        radial-gradient(circle at 80% 15%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 42%),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 46%);
+      transform: rotate(-6deg);
+    }
+    .coverInner {
+      position: relative;
+      height: 100%;
+      min-height: 220mm;
+      padding: 18mm 14mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8mm;
+      text-align: center;
+      color: #fff;
+    }
+    .coverBadge {
+      align-self: center;
+      display: inline-block;
+      padding: 2mm 6mm;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 999px;
+      font-size: 16pt;
+      background: rgba(0,0,0,.12);
+      backdrop-filter: blur(2px);
+    }
+    .coverTitle {
+      font-size: 44pt;
+      margin: 0;
+      text-shadow: 0 2mm 5mm rgba(0,0,0,.28);
+    }
+    .coverSub {
+      font-size: 20pt;
+      margin: 0;
+      opacity: .95;
+    }
+    .coverAuthor {
+      margin-top: 8mm;
+      font-size: 22pt;
+      opacity: .98;
+    }
+    .coverFooter {
+      margin-top: 10mm;
+      font-size: 15pt;
+      opacity: .92;
+    }
+
+    /* ===== Dedication ===== */
+    .dedication {
+      text-align: center;
+      padding-top: 35mm;
+      font-size: 22pt;
+      min-height: 180mm;
+    }
+    .dedication .label {
+      font-size: 20pt;
+      margin-bottom: 6mm;
+      opacity: .95;
+    }
+
+    /* ===== Copyright ===== */
+    .copyright {
+      font-size: 16pt;
+      line-height: 2;
+      padding-top: 18mm;
+      min-height: 180mm;
+    }
+
+    /* ===== TOC ===== */
+    .toc {
+      padding-top: 12mm;
+    }
+    .toc h2 {
+      text-align: center;
+      font-size: 28pt;
+      margin: 0 0 8mm 0;
+    }
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: item;
+    }
+    .toc li {
+      counter-increment: item;
+      margin: 0 0 2mm 0;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px dotted #bbb;
+      padding-bottom: 2mm;
+    }
+    .toc .n:before {
+      content: counter(item) "۔";
+      margin-left: 6px;
+    }
+    .toc a {
+      color: inherit;
+      text-decoration: none;
+      flex: 1;
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .toc a:hover,
+    .toc a:focus-visible {
+      color: var(--primary);
+    }
+    .toc .badge {
+      font-family: system-ui, sans-serif;
+      font-size: 9pt;
+      opacity: .6;
+      flex-shrink: 0;
+    }
+
+    /* ===== Poems ===== */
+    .poem {
+      padding-top: 12mm;
+      min-height: 190mm;
+      display: flex;
+      flex-direction: column;
+    }
+    .poem h2 {
+      text-align: center;
+      font-size: 16pt;
+      margin: 0 0 4mm 0;
+    }
+    .poem .meta {
+      text-align: center;
+      font-size: 11pt;
+      opacity: .85;
+      margin: 0 0 6mm 0;
+    }
+    .poem pre,
+    .poem .poem-body {
+      flex: 1;
+      white-space: pre-wrap;
+      margin: 0;
+      font-size: 12.5pt;
+      line-height: 2.15;
+      outline: none;
+      border-radius: 4px;
+      padding: 2px 4px;
+      transition: background .2s, box-shadow .2s;
+      letter-spacing: 0;
+      word-spacing: 0.28em;
+    }
+    .lang-bn .poem-body,
+    .lang-en .poem-body {
+      line-height: 1.9;
+    }
+
+    /* Edit mode styles */
+    body.edit-mode .poem-body {
+      border: 1px dashed #7c3aed;
+      background: #faf5ff;
+      min-height: 80px;
+    }
+    body.edit-mode .poem-body:focus {
+      background: #f3e8ff;
+      box-shadow: 0 0 0 3px rgba(124,58,237,.25);
+    }
+    body.edit-mode .poem h2,
+    body.edit-mode .poem .meta {
+      border: 1px dashed #2b6cb0;
+      background: #eff6ff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .poem-actions {
+      display: none;
+      gap: 8px;
+      margin-top: 12px;
+      justify-content: center;
+      font-family: system-ui, sans-serif;
+    }
+    body.edit-mode .poem-actions {
+      display: flex;
+    }
+    .poem-actions button {
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+    }
+    .poem-actions button.delete-btn {
+      background: #fee2e2;
+      border-color: #f87171;
+      color: #b91c1c;
+    }
+    .poem-actions button.delete-btn:hover {
+      background: #fecaca;
+    }
+
+    /* Add poem panel */
+    .edit-panel {
+      display: none;
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.2);
+      padding: 16px 20px;
+      z-index: 999;
+      font-family: system-ui, sans-serif;
+      direction: rtl;
+      max-width: 92vw;
+      width: 420px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    body.edit-mode .edit-panel {
+      display: block;
+    }
+    .edit-panel h3 {
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      text-align: center;
+    }
+    .edit-panel label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: #444;
+    }
+    .edit-panel input,
+    .edit-panel select,
+    .edit-panel textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      font-family: inherit;
+      direction: rtl;
+    }
+    .edit-panel textarea {
+      min-height: 100px;
+      resize: vertical;
+      font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .edit-panel .btn-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .edit-panel button {
+      padding: 8px 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .edit-panel .btn-add {
+      background: #2b6cb0;
+      color: #fff;
+    }
+    .edit-panel .btn-add:hover {
+      background: #1e4e8c;
+    }
+    .edit-panel .btn-cancel {
+      background: #e5e7eb;
+      color: #333;
+    }
+
+    .status-msg {
+      position: fixed;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #10b981;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      z-index: 1001;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,.2);
+      max-width: 90vw;
+      text-align: center;
+    }
+
+    .missing-note {
+      text-align: center;
+      color: #b91c1c;
+      font-size: 14pt;
+      margin: 10px 0;
+      font-family: system-ui, sans-serif;
+    }
+
+    #importFileInput {
+      display: none;
+    }
+
+    /* ===== Responsive: tablets ===== */
+    @media (max-width: 768px) {
+      .coverTitle { font-size: 36pt; }
+      .coverSub { font-size: 17pt; }
+      .coverAuthor { font-size: 18pt; }
+      .toc h2 { font-size: 24pt; }
+    }
+
+    /* ===== Responsive: phones ===== */
+    @media (max-width: 480px) {
+      body { font-size: 13pt; }
+      body.has-toolbar { padding-top: var(--toolbar-h-mobile); }
+
+      .toolbar { padding: 6px 8px; gap: 6px; }
+      .toolbar button { padding: 6px 10px; font-size: 12px; }
+
+      .page { width: 96%; margin: 5mm auto; padding: 6mm 5mm; border-radius: 3mm; }
+
+      .coverInner { padding: 10mm 6mm; gap: 5mm; min-height: 160mm; }
+      .cover { min-height: 160mm; }
+      .coverBadge { font-size: 12pt; }
+      .coverTitle { font-size: 26pt; }
+      .coverSub { font-size: 14pt; }
+      .coverAuthor { font-size: 15pt; margin-top: 5mm; }
+      .coverFooter { font-size: 11pt; margin-top: 6mm; }
+
+      .dedication { font-size: 16pt; padding-top: 20mm; min-height: 140mm; }
+      .copyright { font-size: 12pt; padding-top: 10mm; min-height: 140mm; }
+
+      .toc h2 { font-size: 19pt; }
+      .toc .badge { font-size: 7.5pt; }
+
+      .poem { min-height: 140mm; padding-top: 8mm; }
+      .poem h2 { font-size: 13pt; }
+      .poem .meta { font-size: 9.5pt; }
+      .poem .poem-body { font-size: 11pt; line-height: 1.95; word-spacing: 0.18em; }
+
+      .edit-panel { width: 92vw; padding: 12px 14px; bottom: 8px; }
+      .status-msg { top: 60px; font-size: 12px; padding: 6px 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body class="has-toolbar">
+
+  <!-- Toolbar -->
+  <div class="toolbar" id="toolbar">
+    <button id="btn-edit-toggle" type="button">✏️ ایڈٹ موڈ آن کریں</button>
+    <button id="btn-save" type="button">💾 محفوظ کریں</button>
+    <button id="btn-export" type="button">📤 ایکسپورٹ</button>
+    <button id="btn-import" type="button">📥 امپورٹ</button>
+    <button id="btn-print" type="button">🖨️ پرنٹ / PDF</button>
+    <button id="btn-reset" type="button">↩️ اصل پر واپس</button>
+  </div>
+  <input type="file" id="importFileInput" accept="application/json" />
+
+  <div class="status-msg" id="statusMsg" role="status" aria-live="polite"></div>
+
+  <!-- Cover -->
+  <section class="page" id="cover">
+    <div class="cover">
+      <div class="coverInner">
+        <div class="coverBadge">شاعری</div>
+        <h1 class="coverTitle">چاند کا عکس</h1>
+        <p class="coverSub">منتخب کلام</p>
+        <div class="coverAuthor">احمد مسعود قریشی</div>
+        <div class="coverFooter">A5 ایڈیشن</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedication -->
+  <section class="page dedication" id="dedication">
+    <div class="label">انتساب</div>
+    <div>ابراہیم فرخ</div>
+    <div>دواود فرخ</div>
+  </section>
+
+  <!-- Copyright -->
+  <section class="page copyright" id="copyright">
+    <h2 style="text-align:center; font-size:26pt; margin:0 0 6mm 0;">اشاعت</h2>
+    <p>
+      عنوان: <strong>چاند کا عکس</strong><br/>
+      مصنف: <strong>احمد مسعود قریشی</strong><br/>
+      صنف: <strong>شاعری</strong>
+    </p>
+    <p>
+      جملہ حقوق محفوظ ہیں۔ اس کتاب کے کسی حصے کی نقل یا اشاعت
+      مصنف کی پیشگی اجازت کے بغیر نہ کی جائے۔
+    </p>
+  </section>
+
+  <!-- TOC -->
+  <section class="page toc" id="toc">
+    <h2>فہرستِ مضامین</h2>
+    <ol id="toc-list">
+      <!-- Will be generated by JS -->
+    </ol>
+  </section>
+
+  <!-- Poems Container -->
+  <div id="poems-container">
+
+    <section class="page poem lang-ur" id="p1" data-num="1" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">کرو شکر رب کا ادا دوستو
+کہ جس نے ہے سب کچھ دیا دوستو
+وہ مالک، وہ خالق، وہ سب کا خدا
+وہ کرتا ہے سب کا بھلا دوستو
+اسی کے ہی لطف و کرم سے سدا
+ہے رحمت کی سب پر گھٹا دوستو
+پڑے کوئی مشکل پکارو اسے
+وہ سنتا ہے سب کی صدا دوستو
+اسی کی ثنا سب کریں روز و شب
+اسی سے ہے مہکے فضا دوستو</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p2" data-num="2" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">سارے جہاں میں رب ہی مرا غم گسار ہے
+آخر کو سب کا جگ میں وہ پرور دگار ہے
+دو بار اس کے در پہ ہی حاضر ہوا تھا میں
+جیون کا یہ سفر تو بڑا یاد گار ہے
+کوئی بھی کام اس سے تو پوشیدہ ہے نہیں
+وہ ہی جہاں میں سب کا بہت راز دار ہے
+کہتا ہے جب بھی کن وہ ہو جاتے ہیں کام سب
+عالم پہ سارے اس کا ہی بس اختیار ہے
+گرچہ خطا کے پتلے ہیں ہم اس جہان میں
+رحمت کی پھر بھی ہم پہ سدا آب شارہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p3" data-num="3" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">ہمیں دیں کا رستہ دکھانے وہ آئے
+ہمیں راہ حق پر چلانے وہ آئے
+
+اندھیرا جہالت کا چھایا ہوا تھا
+پیامِ خدا سو سنانے وہ آئے
+
+بنے آسرا وہ غریبوں کا ہر پل
+وفا اور محبت سکھانے وہ آئے
+
+اندھیرا تھا ہر سمت مایوسیوں کا
+امیدوں کا سورج چڑھانے وہ آئے
+
+محبت، شرافت، صداقت کا پیکر
+ہر ابنِ بشر کو بنانے وہ آئے
+
+روا رکھتے تھے ظلم عورت پہ سب ہی
+انھیں بھی حق اپنا دلانے وہ آئے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p4" data-num="4" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴</h2>
+      <div class="meta" contenteditable="false">نعت (ملتان) — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">ان کے اوصاف جو کردار میں آ جاتے ہیں
+سب سلیقے مری گفتار میں آ جاتے ہیں
+
+اس کی قسمت پہ مجھے رشک سَوا ہوتا ہے
+جس کے خوابوں میں وہ دیدار میں آ جاتے ہیں
+
+ان کی چوکھٹ پہ جو آئے سرِ تعظیم لیے
+بخت ور وہ کسی مہکار میں آ جاتے ہیں
+
+ڈوب کر نعت پڑھیں جو بھی ہیں سچے دل سے
+"قریۂ مدحتِ سرکار میں آ جاتے ہیں"
+
+جو بھی چلتے ہیں سدا نقشِ قدم پر ان کے
+ان کی رحمت کے وہ گلزار میں آ جاتے ہیں
+
+وہ تو احمد بھی، محمد بھی ہیں، محمود بھی ہیں
+نام کتنے مرے اشعار میں آ جاتے ہیں
+
+ان کی سیرت تو اثر کرتی ہے دل پر مسعود
+ہر مفکر کے وہ افکار میں آ جاتے ہیں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p5" data-num="5" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۵</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">پیمبر کی سیرت سراپا ضیا ہے
+سو اُن کا ہر اک نقشِ پا رہنما ہے
+پیامِ خدا ہم کو اُن سے ملا ہے
+انہوں نے کہا جو وہ رب کا کہا ہے
+وہ محبوبِ رب ہیں، نبی آخری ہیں
+انہی کا لقب مجتبیٰ، مصطفے ہے
+دلوں میں وہ بستے ہیں، وہ نورِ حق ہیں
+ہر اک حرف ان کا چراغِ ہدیٰ ہے
+خدا کی رضا ملتی ہے جس پہ چل کر
+دکھایا انھوں نے ہی وہ راستہ ہے
+مدینے کی رونق انھی سے ہے قائم
+ہر اک دل، ہر اک جان اُن پر فدا ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p6" data-num="6" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۶</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">ہے دل میں تمنا مرے طیبہ کے سفر کی
+ہو جائے زیارت جو مجھے تیرے نگر کی
+
+رحمت کی برستی ہے گھٹا روضے کے اوپر
+دل کو مرے حسرت بڑی آقا کی نظر کی
+
+وہ شہر جہاں روضۂ اقدس ہے منور
+خوشبو ہے فضاؤں میں اسی خاکِ اثر کی
+
+پائے گا سکوں دل کا جو آئے گا مدینہ
+کہتی ہے صبا جھوم کے آقا کے نگر کی
+
+ظلمت کا جہاں آپ سے ہونے لگا روشن
+ہوتی نہ کوئی قدر تھی عالم میں بشر کی
+
+جاگی ہے تمنا ترے روضے پہ میں جاؤں
+لگتی ہے مجھے اچھی یہ چو کھٹ ترے درکی
+
+تھا خوف خدا دل میں فقط اور نہ کچھ تھا
+پروائی نہ تھی ان کو کسی اور کے ڈر کی</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p7" data-num="7" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۷</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">مری آنکھوں میں اس کا عکس رہتا ہے
+اندھیری رات میں بھی شمس رہتا ہے
+مرے ہاتھوں میں اس نے ہاتھ رکھا تھا
+مری یادوں میں اب تک لمس رہتا ہے
+تمنا جاگتی رہتی ہے ہر دل میں
+ہمیشہ دل میں زندہ نفس رہتا ہے
+پیا ہے جام جس نے بھی محبت کا
+لبوں پر عمر بھر وہ رس رہتا ہے
+کبھی جو دور تھا مجھ سے، جہاں والو
+مرے دل میں وہی اک شخص رہتا ہے
+دیا مجنوں نے تھا جو درس دنیا کو
+ابھی تو عشق کا وہ درس رہتا ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p8" data-num="8" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۸</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">تیری یادوں کو دل میں بسائے رکھا
+دیپ الفت کا ہم نے جلائے رکھا
+
+ہم تو چلتے رہے پیار کی راہ پر
+اپنے دشمن کو اپنا بنائے رکھا
+
+ہجر کی شب قیامت سے کم تو نہ تھی
+رات بھر جس نے ہم کو جگائے رکھا
+
+اس سے ملنے کو یہ دل مچلتا رہا
+درد فرقت کو دل میں چھپائے رکھا
+
+اس نے ڈالی تھی اک بار ہم پر نظر
+ہم نے آنکھوں میں اس کو سجائے رکھا</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p9" data-num="9" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۹</h2>
+      <div class="meta" contenteditable="false">غزل — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">ہم کو کسی نے پیار سے دیکھا تھا ایک بار
+ہم کو لگا وہ اپنا سا دنیا میں ایک بار
+یہ اور بات ہے کہ وہ ہم کو ملا نہیں
+دامن خوشی کا ہم نے بھی تھاما تھا ایک بار
+برکھا کی رت بھی چپکے سے آکر گزر گئی
+بادل وفا کا ہم پہ بھی برسا تھا ایک بار
+خوشبو ابھی بھی پھیلی ہے دل کے دیار میں
+وہ میرے گھر گلاب لے آیا تھا ایک بار
+پلکوں سے آج تک بھی وہ منظر نہیں گیا
+اس نے نقاب رخ سے اٹھایا تھا ایک بار
+مسعود پھر وہ خواب حقیقت نہ بن سکا
+آنکھوں میں جس کا نقش سجایا تھا ایک بار</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p10" data-num="10" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۰</h2>
+      <div class="meta" contenteditable="false">غزل — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">ہم نے لوگوں کو بدلتے ہوئے اکثر دیکھا
+ان کی ہر بات میں ہر وقت تکبر دیکھا
+سچ کے بولوں نے خموشی کو مری توڑا جب
+سامنے آتا ہوا میں نے ستم گر دیکھا
+اب تو ہر شے کو گرانی کی قبا میں پایا
+حال مفلس کا مری آنکھ نے ابتر دیکھا
+پھول چاہت کے کھلے دل کی زمیں پر اس دم
+جس گھڑی حسن کا تیرے میں نے منظر دیکھا
+آس ملنے کی مرے دل میں جگی تھی مسعود
+جب مقدر کا چمکتا ہوا اختر دیکھا</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p11" data-num="11" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۱</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">رستے میں ترے ہم کبھی دیوار نہیں تھے
+"اس طرح کبھی راندہ دربار نہیں تھے,"
+دل ہم نے دیا تھا تو کسی شرط پہ کب تھا
+ہم اہلِ محبت تو خریدار نہیں تھے
+محروم رہے لوگ بہت اپنے صلے سے
+حق ان کو ملا اس کے جو حقدار نہیں تھے
+کھائے ہیں یہاں دھوکے بہت دل نے ہمارے
+ہم شہر میں تیرے کبھی ہشیار نہیں تھے
+میں عشق کی راہوں میں بڑے شوق سے نکلا
+رستے میں مرے خار تھے گلزار نہیں تھے
+ہم نے تو ترے پیار میں یہ عمر گنوا دی
+یہ کس نے کہا ہم ترے غم خوار نہیں تھے
+تجھ پر جو نظر ڈالی غزل جاگ کے بولی
+ایسے مرے لہجے میں اشعار نہیں تھے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p12" data-num="12" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۲</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">محبت خوں میں شامل ہو گئی ہے
+وفا کرنے کے قابل ہو گئی ہے
+محبت سے ہی دل کی رونقیں ہیں
+نظر دنیا کی حائل ہو گئی ہے
+خوشی کے در سبھی تھے بند مجھ پر
+تری قربت سے حاصل ہو گئی ہے
+جو مدت سے تھی دل پر بوجھ بن کر
+وہ حسرت آج زائل ہو گئی ہے
+تری الفت کی ٹھنڈی سی مہک اب
+مرے دل میں بھی داخل ہو گئی ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p13" data-num="13" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۳</h2>
+      <div class="meta" contenteditable="false">غزل — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">گزرے ہوئے موسم کی صدا آنے لگی ہے
+شامل تھی خوشی جس میں صبا آنے لگی ہے
+دیکھا تھا نظر بھر کے اسے بزم میں اک دن
+اس دن سے پری وش میں ادا آنے لگی ہے
+میں عشق کی بازی کو اکیلا نہیں کھیلا
+میں خوش ہوں کہ اس کی بھی رضا آنے لگی ہے
+مشکل میں کسی کے جو کبھی کام میں آیا
+میرے لیے اس لب سے دعا آنے لگی ہے
+کھویا ہوا رہتا ہوں فقط یاد میں اس کی
+کاموں میں مرے جب سے خطا آنے لگی ہے
+سوکھے ہیں شجر پیار کے گلشن میں آگرچہ
+ایسے میں کسی شاخ سے وفا آنے لگی ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p14" data-num="14" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۴</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">غم زمانے کے مجھے پھر سے ستانے آئے
+میری خوشیوں کو وہ دریا میں بہانے آئے
+آسماں پر جو گھٹا چھائی محبت والی
+تیری یادوں کے مرے پاس ترانے آئے
+بام الفت پہ ذرا آ کے صدا تو دے دے
+تیری دہلیز پہ ہم خواب سجانے آئے
+تیری چاہت کو چھپا رکھا تھا اپنے دل میں
+ایسا لگتا تھا ہمیں؛ پاس خزانے آئے
+جنھیں سمجھا تھا سدا اپنے سفر کا ساتھی
+زخم دل پر مرے وہ دوست لگانے آئے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p15" data-num="15" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۵</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">تمھاری یاد کا ساون ہے برسا
+تمھاری یاد سے نکلا نہیں ہوں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p16" data-num="16" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۶</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">پائے گا سکوں دل کا جو آئے گا مدینے
+کہتی ہے صبا جھوم کے آقا کے نگر کی</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p17" data-num="17" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۷</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">محبت زندگی کا اک سفر ہے
+اندھیرے میں ہوئی جیسے سحر ہے
+کوئی روتا کوئی ہنستا ادھر ہے
+کسی کے حال کی کس کو خبر ہے
+گزاری عمر ساری راہ تکتے
+نہیں معلوم وہ رہتا کدھر ہے
+ہمیشہ ساتھ دینا اہل زر کا
+زمانے کی یہی دیکھی ڈگر ہے
+جہاں لفظوں کے پھل خود جھومتے ہیں
+غزل کے شہر میں ایسا شجر ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p18" data-num="18" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۸</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">میرے خط کا جواب آتا ہے
+مجھ کو اکثر یہ خواب آتا ہے
+شعر کہتا ہوں جب محبت کے
+لمحہ لمحہ شباب آتا ہے
+بھول جاتا ہوں خود کو اک پل میں
+یاد وہ بے حساب آتا ہے
+میرے دل کی خبر سنا کے اسے
+اس کے گھر سے گلاب آتا ہے
+یہ ضروری نہیں وہ مل جائے
+عاشقی میں سراب آتا ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p19" data-num="19" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۱۹</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">یہ زندگی ہماری تمھاری ہے زندگی
+گر ساتھ ہو تمھارا تو پیاری ہے زندگی
+اس کی نگہ سے جام محبت کا جو پیا
+محسوس ہو رہا ہے خماری ہے زندگی
+دل میں کھلی ہے جب سے محبت کی اک کلی
+خوشبو سے اس کی ہم نے نکھاری ہے زندگی
+اس نے دکھائے خواب تھے ہم کو حسین تر
+اس کے سہارے ہم نے گزاری ہے زندگی
+موسم بہار کے بھی ہیں بلبل کی ہے چہک
+ہر شخص کو جہان میں پیاری ہے زندگی
+ہم کو اکیلا چھوڑ کے جب سے گیا ہے وہ
+ایسا لگا ہے ہم کو کہ بھاری ہے زندگی</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p20" data-num="20" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۰</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">کون کہتا ہے اسے شاد نہیں کر سکتا
+اس کو دل میں کبھی آباد نہیں کر سکتا
+موم کو میں کبھی فولاد نہیں کر سکتا
+چیز ایسی کوئی ایجاد نہیں کر سکتا
+وہ مرا دوست ہے مانے گا مری سب باتیں
+پیڑ شاخوں کو ناشاد نہیں کر سکتا
+زخم سینے پہ دیے مجھ کو مرے اپنوں نے
+میں کسی شخص سے فریاد نہیں کر سکتا
+مجھ سے حاصل نہیں ہے فائدہ کوئی اس کو
+وقت کو اپنے وہ برباد نہیں کر سکتا</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p21" data-num="21" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۱</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">وہ میری بزم سے اٹھ کر نکل رہا ہے میاں
+زباں سے راز مرے وہ اگل رہا ہے میاں
+جو اک نظر میں مرے دل کو بھا گیا تھا کبھی
+اسی کی دید کو یہ دل مچل رہا ہے میاں
+ذرا سنبھل کے اٹھانا قدم چلو جب تم
+کہ ہوا کا رخ ابھی سے بدل رہا ہے میاں
+رہے گا ساتھ مرا اس سے زندگی بھر کو
+یہ فیصلہ تھا مرا جو اٹل رہا ہے میاں
+نہ رکھنا خوف اندھیرے کا اس سفر میں تم
+جو دیپ میں نے جلایا تھا جل رہا ہے میاں
+دیے گلاب وفا کے اسے مہکتے ہوئے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p22" data-num="22" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۲</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">بہانے ڈھونڈ کے وہ مجھ سے ملنے آتے ہیں
+کہ جیسے دھوپ میں برسے گھٹا مرے گھر میں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p23" data-num="23" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۳</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">نگہ میں اپنی وہ کیا کیا چھپا کے بیٹھے ہیں</div>
+      <div class="missing-note">⚠️ اس نظم کا باقی حصہ اصل فائل میں موجود نہیں تھا — آپ ایڈٹ موڈ میں مکمل کر سکتے ہیں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p24" data-num="24" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۴</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false"></div>
+      <div class="missing-note">⚠️ یہ نظم اصل فائل میں موجود نہیں تھی (TOC میں: نقاب رخ سے وہ اپنے کبھی اٹھاتے ہیں) — آپ یہاں لکھ سکتے ہیں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p25" data-num="25" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۵</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false"></div>
+      <div class="missing-note">⚠️ یہ نظم اصل فائل میں موجود نہیں تھی (TOC میں: محبوب کتنے شاہ کو پیارے حسین ہیں!) — آپ یہاں لکھ سکتے ہیں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p26" data-num="26" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۶</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false"></div>
+      <div class="missing-note">⚠️ یہ نظم اصل فائل میں موجود نہیں تھی (TOC میں: دل کہہ رہا ہے مجھ سے محبت غزل سے ہے) — آپ یہاں لکھ سکتے ہیں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p27" data-num="27" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۷</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">تم ملو اگر مجھے زندگی سنوار لوں
+دل کے اپنے باغ کو اس گھڑی نکھار لوں
+یاد آئے جب تری خامشی کی رات میں
+من مرا یہی کہے تجھ کو میں پکار لوں
+وصل کی ہر اک گھڑی مجھ کو کم ملی بہت
+سوچتا ہوں روز میں وقت کچھ ادھار لوں
+حسن بے مثال ہے اس پری کا دہر میں
+دل کی اس زمین پر میں اسے اتار لوں
+زندگی کی راہ میں غم کھڑے ہوئے ملے
+پھر میں اس سفر سے کیوں دوستو فرار لوں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p28" data-num="28" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۸</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">محبت سے جہاں میں روشنی ہے
+ہوئی اس سے جگر میں نغمگی ہے
+ستم سہتا رہا خاموش رہ کر
+لگا ایسے کہ اس میں بہتری ہے
+تڑپنا عشق میں اس ماہ رخ کے
+یوں ہی ہم نے گزاری زندگی ہے
+چمن یہ کہہ رہا ہے گنگنا کر
+مرے پھولوں میں دیکھو تازگی ہے
+مری آنکھوں سے نیندیں اڑ گئی ہیں
+بچھڑ کر اس سے کیسی بے کلی ہے
+جو اپنا ہے وہی دشمن ہوا ہے
+عجب اس دور کی یہ دو ستی ہے
+بیاں کرتا میں اس کو دل کی حالت
+مگر وہ پاس ٹھہرا دو گھڑی ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p29" data-num="29" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۲۹</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">محبت کا وعدہ وفا ہو گیا
+وفاؤں کا اک سلسلہ ہو گیا
+پرندے جو آزاد اڑنے لگے
+قفس کا ہوا سے گلہ ہو گیا
+شبِ ہجر میں جاگتے جاگتے
+سحر کا وہ لمحہ عطا ہو گیا
+ہوئی روشنی تیرگی میں بہت
+چراغوں سے وہ حق ادا ہو گیا
+خوشی کی کلی میرے دل میں کھلی
+کہ پنجرے سے پنچھی رہا ہو گیا</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p30" data-num="30" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۰</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">زندگی جب محال ہوتی ہے
+روشنی پھر نڈھال ہوتی ہے
+شاخ سے برگ جھڑنے لگتے ہیں
+عمر اک دن زوال ہوتی ہے
+دل کے آنگن میں پھول کھلتے ہیں
+سامنے جب غزال ہوتی ہے
+پیڑ پر جب ثمر مہکنے لگیں
+پھر خوشی ڈال ڈال ہوتی ہے
+پیار قسمت سے منسلک ہے سدا
+چاہتوں میں نہ فال ہوتی ہے
+عشق کا ساز دل کے تاروں پر
+بج اٹھے تو دھمال ہوتی ہے
+بات بنتی ہے شعر کہنے میں
+جب غزل پر خیال ہوتی ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p31" data-num="31" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۱</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">اٹھی نظر کا اشارہ سمجھ گیا ہوتا
+کبھی وہ درد ہمارا سمجھ گیا ہوتا</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p32" data-num="32" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۲</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">اس کی یادوں کا نشاں دل میں تھا
+کتنا دلکش سا سماں دل میں تھا
+یاد کر تا تھا اسے ہر ساعت
+صبر اتنا تو کہاں دل میں تھا
+اس کی یادوں کے لگے میلے سے
+ایک آباد جہاں دل میں تھا
+گرچہ وہ پاس نہیں تھا میرے
+پاس ہونے کا گماں دل میں تھا
+آج گلشن میں اداسی سی تھی
+آج موسم بھی خزاں کا دل میں تھا
+گرچہ پیری نے قدم ڈالے تھے
+عشق اب بھی وہ جواں دل میں تھا</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p33" data-num="33" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۳</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">گنہ کیے تھے جو سب کو بتا دیے گئے ہیں
+وہ لوگ سب کی نظر سے گرا دیے گئے ہیں
+ہمیں پتہ ہے وہ وعدہ وفا نہ کر سکیں گے
+ہماری آنکھ میں سپنے سجا دیے گئے ہیں
+ہمیں یقین تھا منزل کو پائیں گے اک دن
+ہماری راہ میں کانٹے بچھا دیے گئے ہیں
+سنا ہے کوئی چراغوں کو پوچھتا ہی نہیں کوئی
+کہ روشنی کے وسیلے بجھا دیے گئے ہیں
+اسے وفا کہیں یا پھر دغا سمجھ لیں ہم
+کبھی کیے تو جو احساں جتا دیے گئے ہیں
+بھروسے جن پہ کیے تھے کبھی یقیں کے ساتھ
+بھروسے سب وہ ہوا میں اڑا دیے گئے ہیں
+جہاں شجر کی میسر تھی چھاؤں ہم کو کبھی
+وہاں پہ آج پلازے بنا دیے گئے ہیں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p34" data-num="34" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۴</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">میرے بارے میں بھی تو نے کبھی سوچا ہو گا
+تیری آنکھوں میں بھی بستا مرا سپنا ہوگا
+رات بھر چاند کو تکتی رہی میری آنکھیں
+ایسا لگتا تھا مرے بن تو بھی تنہا ہو گا
+عشق کی رہ میں بہاروں نے قدم رکھے ہیں
+اس کے رستے میں کوئی پھول تو مہکا ہو گا
+تیری یادوں کی گھٹا ساتھ رہی ہے میرے
+تیرے آنگن میں مرا پیار بھی برسا ہوگا
+دل میں تصویر تری میں نے لگا رکھی ہے
+تو بھی باتیں مری تصویر سے کرتا ہو گا</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p35" data-num="35" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۵</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">بسی خوشبو سخن کی جس میں وہ غنچہ ہے اردوچہ
+مقامِ اوج پر چڑھتا ہوا پہنچا ہے اردوچہ</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p36" data-num="36" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۶</h2>
+      <div class="meta" contenteditable="false">غزل (راولپنڈی) — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">ہمارا فیصلہ کچھ مختلف ہے
+چنا جو راستہ کچھ مختلف ہے
+سمجھنا چاہے جو وہ آ کے دیکھے
+ہماری ہر ادا کچھ مختلف ہے
+وہ پوچھیں کیوں اکیلے ہو سفر میں
+سفر کا مرحلہ کچھ مختلف ہے
+نہ دنیا کی روش سے کام اپنا
+ہمارا قافلہ کچھ مختلف ہے
+محبت میں ملا سب کو سکوں ہے
+وفا کا آئنہ کچھ مختلف ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p37" data-num="37" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۷</h2>
+      <div class="meta" contenteditable="false">غزل (راولپنڈی) — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">دل کو اپنے گنوا لیا میں نے
+پیار اس سے بڑھا لیا میں نے
+اپنے لفظوں میں چاشنی بھر کر
+اس کو اپنا بنا لیا میں نے
+جانتا تھا شفا نہیں اس میں
+روگ ایسا لگا لیا میں نے
+جسے پورا نہ ہونا بنتا تھا
+وہی وعدہ نبھا لیا میں نے
+کسی کا عیب جب بھی ہے دیکھا
+عیب اس کا چھپا لیا میں نے
+لاج سچ کی مجھے تو رکھنی تھی
+اپنا سب کچھ لٹا لیا میں نے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p38" data-num="38" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۸</h2>
+      <div class="meta" contenteditable="false">غزل (راولپنڈی) — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">کیا خبر تھی یہاں دستور نرالے ہوں گے
+راہ منزل میں مرے پاؤں میں چھالے ہوں گے
+عشق ہم نے ہی نہیں صرف کیا دنیا میں
+اس کے افسانوں کے کتنے ہی حوالے ہوں گے
+عمر گزری ہے اندھیروں میں ہمیشہ میری
+تیرے ملنے سے مرے دل میں اجالے ہوں گے
+زخم دیتی رہی دنیا مجھے ہر رستے پر
+آس دل کو ہے ضرور ان کے ازالے ہوں گے
+جب کبھی بام پہ وہ آئے ادا کے ہمراہ
+دیکھنے والوں نے دل کیسے سنبھالے ہوں گے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p39" data-num="39" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۳۹</h2>
+      <div class="meta" contenteditable="false">غزل — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">دل میں مہکا ہے ترا پیار غزل کہنے دے
+مجھ کو کرنا ہے یہ اظہار غزل کہنے دے
+آنکھوں آنکھوں میں ہوئی دل کو محبت تجھ سے
+تو بھی کر لے یہی اقرار غزل کہنے دے
+تجھ سے ملنے کی تمنا ہوئی رقصاں دل میں
+ہو ترا وصل مرے یار غزل کہنے دے
+چاند راتوں میں تجھے یاد کیا ہے میں نے
+ذکر کرتے مرے اشعار غزل کہنے دے
+روشنی ہوتی ہے الفت کے چراغوں سے سدا
+پھر بھی یہ راہ ہے پر خار غزل کہنے دے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p40" data-num="40" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۰</h2>
+      <div class="meta" contenteditable="false">غزل (راولپنڈی) — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">فضا میں نغمگی ہے روشنی ہے
+تمھاری دید سے ہی زندگی ہے
+تمھاری یاد کا ساون ہے برسا
+اسی برسات میں کی شاعری ہے
+بجا ہے ساز الفت کا جگر میں
+فضائے دل میں دیکھی نغمگی ہے
+امیدوں کے پرندے اڑ گئے ہیں
+اداسی کی ہوا پھر سے چلی ہے
+حسیں موسم صدائیں دے رہا ہے
+چلے آؤ کہ رت جانے لگی ہے
+کہانی درد کی کس کو سناؤں
+جو اپنا تھا وہی اب اجنبی ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p41" data-num="41" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۱</h2>
+      <div class="meta" contenteditable="false">غزل (راولپنڈی) — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">تم اس قدر حسیں ہو تمھیں دیکھتا رہوں
+دل میں مرے قریں ہو تمھیں دیکھتا رہوں
+دریائے عشق میں جو چمکتا ہے ہر گھڑی
+تم ایسا اک نگیں ہو تمھیں دیکھتا رہوں
+جس میں کہے ہیں شعر محبت کے بے شمار
+تم وہ مری زمیں ہو تمھیں دیکھتا رہوں
+یہ بات جانتے ہی نہیں تم ابھی تلک
+تم کتنی دل نشیں ہو تمھیں دیکھتا رہوں
+چرچے ہیں جس کے حسن کے چاروں طرف یہاں
+تم وہ ہی مہ جبیں ہو تمھیں دیکھتا رہوں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p42" data-num="42" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۲</h2>
+      <div class="meta" contenteditable="false">غزل — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">وہ مرے دل کی ہر اک بات سمجھتے ہوں گے
+آنکھوں آنکھوں میں ملاقات سمجھتے ہوں گے
+موسمِ ہجر گزر جائے گا یادوں میں ہی
+وہ مری اشک‌ فشاں رات سمجھتے ہوں گے
+دل کے قرطاس پہ لکھی تھیں عبارات میں نے
+وہ مرے سوختہ جذبات سمجھتے ہوں گے
+سازِ ہستی کو بجاتا رہا تنہا ہو کر
+وہ مرے درد کے نغمات سمجھتے ہوں گے
+گزری یادوں کو بسایا ہے جگر میں اپنے
+ساتھ بیتے ہوئے لمحات سمجھتے ہوں گے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p43" data-num="43" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۳</h2>
+      <div class="meta" contenteditable="false">غزل — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">یہ محبت ہمیں قسمت سے عطا ہوتی ہے
+اس میں شامل کسی دلبر کی رضا ہوتی ہے
+جب نظر ملتی ہے اس سے تو یہ لگتا ہے مجھے
+آنکھ سے آنکھ کے رستے بھی دعا ہوتی ہے
+دل کی بستی میں جو آ جائے وہ رہتا ہے سدا
+اس مسافر کی نہیں راہ جدا ہوتی ہے
+ہم نے مانگے تھے فقط پیار کے دو پل اس سے
+پر محبت میں سبھی عمر فنا ہوتی ہے
+
+جو بچھڑ جائے وہ یادوں میں بسا رہتا ہے
+دل کے ہر گوشے میں اس کی تو جگہ ہوتی ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p44" data-num="44" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۴</h2>
+      <div class="meta" contenteditable="false">غزل — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">محبت کے نگر میں روشنی ہے
+مہکتی اس میں میری شاعری ہے
+ستم سہہ کر بھی لب پر خامشی ہے
+یہاں مجبور کتنا آدمی ہے
+کسی کے کام آنا مسکرانا
+سبق دیتی ہمیں یہ زندگی ہے
+چمن یہ کہہ رہا ہے گنگنا کر
+سبھی پھولوں میں دیکھو تازگی ہے
+نہیں ہے چین میرے دل کو اک پل
+بچھڑ کر اس سے کیسی بے کلی ہے
+جو اپنا تھا وہی دشمن ہوا ہے
+عجب اس دور کی یہ دو ستی ہے
+سناؤں حال دل کا اس کو کیسے
+مری تو بات اس سے سرسری ہے
+ہمیشہ ساتھ اس کا مانگتا ہوں
+مرا اس سے تعلق دائمی ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p45" data-num="45" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۵</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">جب بھی اٹھایا ہاتھ دعا کو کسی گھڑی
+رستے خدا سے ملنے کے دل نے بنا دیے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p46" data-num="46" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۶</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">دنیا نے میری راہ میں پتھر بچھا دیے
+دل کے چراغ درد نے آکر بجھا دیے
+جب بھی اٹھایا ہاتھ دعا کو کسی گھڑی
+رستے خدا سے ملنے کے دل نے بنا دیے
+اشکوں کو تھام بیٹھا رہا اس کے سامنے
+آنکھوں نے آنسو روکے تھے دل نے بہا دیے
+جگ نے ستایا راہ میں کچھ اس طرح مجھے
+لمحے ملے تھے پیار کے وہ بھی گنوا دیے
+رخصت ہوا وہ کہہ کے نہ آؤں گا اب کبھی
+قرطاس ـ دل پہ غم نے یوں نقشے بنا دیے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p47" data-num="47" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۷</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">پیمبر کی سیرت سراپا ضیا ہے
+سو اُن کا ہر اک نقشِ پا رہنما ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p48" data-num="48" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۸</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">بنائے اس نے جہاں میں بہت سمندر ہیں
+کہ جن کی موج میں پنہاں بہت سے گوہر ہیں</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p49" data-num="49" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۴۹</h2>
+      <div class="meta" contenteditable="false">غزل — تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">میں نے اسے حیات کا رہبر سمجھ لیا
+جو بات اس نے کی اسے سن کر سمجھ لیا
+چاہت کی موج دل میں مرے تیز تر ہوئی
+جب سے ہی دل کو میں نے سمندر سمجھ لیا
+پودوں کو راس آیا نہ موسم بہار بھی
+میں نے زمیں کو اپنی ہی بنجر سمجھ لیا
+کٹتی رہی ہے عمر مری تیرے ہجر میں
+اشکوں کو میں نے اپنے مقدر سمجھ لیا
+جلتا ہوں میں بھی دیکھ کے دنیا میں ظلم کو
+ایسا نہیں کہ دل کو ہی پتھر سمجھ لیا
+اس کی نگاہ ناز جو اک بار پڑ گئی
+دل نے مرے اسے جبھی دلبر سمجھ لیا</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p50" data-num="50" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۵۰</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">مجھے جب سے تیرا سہارا ملا ہے
+سفینے کو میرے کنارہ ملا ہے
+ہوئی ابتدا جب محبت کی میری
+نظر کو حسیں اک ستارہ ملا ہے
+عجب اک طلاطم دلِ زار میں ہے
+مجھے جب سے وہ شوخ پیارا ملا ہے
+ہوئی داستاں عشق کی تب مرتب
+نظر کا تری جب اشارہ ملا ہے
+ہوا میرے دل کا یہ آنگن منور
+محبت کا جب سے منارہ ملا ہے
+کٹی رات تنہا ستاروں کو دیکھا
+ہوئی صبح تو اک نظارہ ملا ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+    <section class="page poem lang-ur" id="p51" data-num="51" lang="ur" dir="rtl">
+      <h2 contenteditable="false">۵۱</h2>
+      <div class="meta" contenteditable="false">تخلیق کار: احمد مسعود قریشی</div>
+      <div class="poem-body" contenteditable="false">تجھ سے ملنے کی تمنا اب بھی ہے
+یاد کا وہ تازہ جھونکا اب بھی ہے
+اک یقیں دل کو ہے تو مل جائے گا
+آنے جانے کا وہ رستہ اب بھی ہے
+جس کی خوشبو سے مہکتا دل یہ تھا
+شاخ الفت پر وہ غنچہ اب بھی ہے
+تجھ سے بچھڑے ہو گئی مدت بہت
+راہ تیری دل یہ تکتا اب بھی ہے
+جل رہے ہیں دیپ تیری یاد کے
+روشنی کا یہ اجالا اب بھی ہے</div>
+      <div class="poem-actions">
+        <button class="delete-btn" type="button">حذف کریں</button>
+      </div>
+    </section>
+
+  </div><!-- end poems-container -->
+
+  <!-- Add Poem Panel -->
+  <div class="edit-panel" id="addPanel">
+    <h3>نئی نظم شامل کریں</h3>
+    <label for="newLang">زبان</label>
+    <select id="newLang">
+      <option value="ur" selected>اردو</option>
+      <option value="bn">বাংলা</option>
+      <option value="en">English</option>
+    </select>
+    <label for="newTitle">عنوان / نمبر (اختیاری)</label>
+    <input type="text" id="newTitle" placeholder="مثلاً ۵۲ یا کوئی عنوان" />
+    <label for="newMeta">میٹا / نوٹ (اختیاری)</label>
+    <input type="text" id="newMeta" placeholder="غزل — تخلیق کار: احمد مسعود قریشی" value="تخلیق کار: احمد مسعود قریشی" />
+    <label for="newBody">نظم کا متن</label>
+    <textarea id="newBody" placeholder="یہاں نظم لکھیں..."></textarea>
+    <div class="btn-row">
+      <button class="btn-add" id="btn-add-poem" type="button">شامل کریں</button>
+      <button class="btn-cancel" id="btn-clear-form" type="button">صاف کریں</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // ===== State =====
+      let editMode = false;
+      let isAuthenticated = false;
+      let lastDeleted = null; // { html, index } — one-step undo for delete
+      const STORAGE_KEY = 'chand-ka-aks-poems-v2';
+      // پاس ورڈ کو پلین ٹیکسٹ کے بجائے SHA-256 ہیش کی صورت میں رکھا گیا ہے،
+      // تاکہ "View Source" کرنے سے پاس ورڈ سیدھا نظر نہ آئے۔
+      const EDIT_PASSWORD_HASH = '6414d3af63ac77ec7a39689195188ac6ff3da440cc1d6b72baeb6613bcf1d5e8';
+
+      const LANG_LABEL = { ur: 'اردو', bn: 'বাংলা', en: 'English' };
+
+      // ===== Helpers =====
+      function showStatus(msg, isError) {
+        const el = document.getElementById('statusMsg');
+        el.textContent = msg;
+        el.style.background = isError ? '#ef4444' : '#10b981';
+        el.style.display = 'block';
+        clearTimeout(showStatus._t);
+        showStatus._t = setTimeout(function () { el.style.display = 'none'; }, 2500);
+      }
+
+      function toUrduNum(n) {
+        const map = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+        return String(n).split('').map(function (d) { return map[d] || d; }).join('');
+      }
+
+      async function sha256Hex(str) {
+        const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+        return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+      }
+
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text || '';
+        return div.innerHTML;
+      }
+
+      function getPoemLang(section) {
+        return section.getAttribute('lang') || 'ur';
+      }
+
+      function applyLangAttrs(section, lang) {
+        section.classList.remove('lang-ur', 'lang-bn', 'lang-en');
+        section.classList.add('lang-' + lang);
+        section.setAttribute('lang', lang);
+        section.setAttribute('dir', lang === 'ur' ? 'rtl' : 'ltr');
+      }
+
+      // ===== TOC Generation =====
+      function rebuildTOC() {
+        const list = document.getElementById('toc-list');
+        list.innerHTML = '';
+        const poems = document.querySelectorAll('#poems-container .poem');
+        poems.forEach(function (poem, idx) {
+          const num = idx + 1;
+          const body = poem.querySelector('.poem-body');
+          const lang = getPoemLang(poem);
+          let title = '';
+          if (body) {
+            const firstLine = (body.textContent || '').trim().split('\n')[0] || '';
+            title = firstLine.substring(0, 50) + (firstLine.length > 50 ? '…' : '');
+          }
+          if (!title) title = (lang === 'ur' ? 'نظم ' + toUrduNum(num) : 'Poem ' + num);
+
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = '#' + poem.id;
+          const nSpan = document.createElement('span');
+          nSpan.className = 'n';
+          const titleSpan = document.createElement('span');
+          titleSpan.textContent = title;
+          const badge = document.createElement('span');
+          badge.className = 'badge';
+          badge.textContent = LANG_LABEL[lang] || lang;
+          a.appendChild(nSpan);
+          a.appendChild(titleSpan);
+          a.appendChild(badge);
+          li.appendChild(a);
+          list.appendChild(li);
+
+          // Update poem numbering (Urdu poems keep Urdu numerals, others keep plain numbers)
+          const h2 = poem.querySelector('h2');
+          if (h2 && !h2.dataset.customTitle) {
+            h2.textContent = lang === 'ur' ? toUrduNum(num) : String(num);
+          }
+          poem.dataset.num = num;
+          poem.id = 'p' + num;
+        });
+      }
+
+      // ===== Password Check (client-side only — see note below) =====
+      // نوٹ: یہ صرف حادثاتی/آسان ترمیم سے بچانے کے لیے ہے، حقیقی سیکیورٹی نہیں۔
+      // اصل رسائی کنٹرول کے لیے بیک اینڈ/سرور سائیڈ اتھینٹیکیشن ضروری ہے۔
+      async function askPassword() {
+        const pwd = prompt('ایڈٹ موڈ کے لیے پاس ورڈ درج کریں:');
+        if (pwd === null) return false;
+        const hash = await sha256Hex(pwd);
+        if (hash === EDIT_PASSWORD_HASH) {
+          isAuthenticated = true;
+          showStatus('پاس ورڈ درست ہے');
+          return true;
+        }
+        showStatus('غلط پاس ورڈ!', true);
+        return false;
+      }
+
+      // ===== Edit Mode =====
+      async function toggleEditMode() {
+        if (!editMode && !isAuthenticated) {
+          const ok = await askPassword();
+          if (!ok) return;
+        }
+
+        editMode = !editMode;
+        document.body.classList.toggle('edit-mode', editMode);
+        const btn = document.getElementById('btn-edit-toggle');
+        btn.textContent = editMode ? '✅ ایڈٹ موڈ بند کریں' : '✏️ ایڈٹ موڈ آن کریں';
+        btn.classList.toggle('active', editMode);
+
+        document.querySelectorAll('.poem-body, .poem h2, .poem .meta').forEach(function (el) {
+          el.contentEditable = editMode ? 'true' : 'false';
+        });
+
+        showStatus(editMode ? 'ایڈٹ موڈ آن ہے — نظم پر کلک کر کے ایڈٹ کریں' : 'ایڈٹ موڈ بند');
+      }
+
+      // ===== Save / Load (localStorage) =====
+      function savePoems() {
+        const poems = [];
+        document.querySelectorAll('#poems-container .poem').forEach(function (poem) {
+          poems.push({
+            title: (poem.querySelector('h2') || {}).textContent || '',
+            meta: (poem.querySelector('.meta') || {}).textContent || '',
+            body: (poem.querySelector('.poem-body') || {}).innerText || '',
+            lang: getPoemLang(poem)
+          });
+        });
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(poems));
+          showStatus('محفوظ ہو گیا! (اس براؤزر میں)');
+        } catch (e) {
+          showStatus('محفوظ نہیں ہو سکا', true);
+        }
+      }
+
+      function buildPoemSection(p, num) {
+        const lang = p.lang || 'ur';
+        const section = document.createElement('section');
+        section.className = 'page poem lang-' + lang;
+        section.id = 'p' + num;
+        section.dataset.num = num;
+        section.setAttribute('lang', lang);
+        section.setAttribute('dir', lang === 'ur' ? 'rtl' : 'ltr');
+
+        const h2 = document.createElement('h2');
+        h2.contentEditable = editMode ? 'true' : 'false';
+        h2.textContent = p.title || (lang === 'ur' ? toUrduNum(num) : String(num));
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.contentEditable = editMode ? 'true' : 'false';
+        meta.textContent = p.meta || 'تخلیق کار: احمد مسعود قریشی';
+
+        const body = document.createElement('div');
+        body.className = 'poem-body';
+        body.contentEditable = editMode ? 'true' : 'false';
+        body.textContent = p.body || '';
+
+        const actions = document.createElement('div');
+        actions.className = 'poem-actions';
+        const delBtn = document.createElement('button');
+        delBtn.className = 'delete-btn';
+        delBtn.type = 'button';
+        delBtn.textContent = 'حذف کریں';
+        actions.appendChild(delBtn);
+
+        section.appendChild(h2);
+        section.appendChild(meta);
+        section.appendChild(body);
+        section.appendChild(actions);
+        return section;
+      }
+
+      function loadPoems() {
+        try {
+          const data = localStorage.getItem(STORAGE_KEY);
+          if (!data) return false;
+          const poems = JSON.parse(data);
+          if (!Array.isArray(poems) || poems.length === 0) return false;
+
+          const container = document.getElementById('poems-container');
+          container.innerHTML = '';
+          poems.forEach(function (p, idx) {
+            container.appendChild(buildPoemSection(p, idx + 1));
+          });
+          rebuildTOC();
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      // ===== Export / Import (backup, since there is no backend) =====
+      function exportPoems() {
+        const poems = [];
+        document.querySelectorAll('#poems-container .poem').forEach(function (poem) {
+          poems.push({
+            title: (poem.querySelector('h2') || {}).textContent || '',
+            meta: (poem.querySelector('.meta') || {}).textContent || '',
+            body: (poem.querySelector('.poem-body') || {}).innerText || '',
+            lang: getPoemLang(poem)
+          });
+        });
+        const blob = new Blob([JSON.stringify(poems, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'chand-ka-aks-backup.json';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        showStatus('بیک اپ فائل ڈاؤن لوڈ ہو گئی');
+      }
+
+      function importPoemsFromFile(file) {
+        const reader = new FileReader();
+        reader.onload = function () {
+          try {
+            const poems = JSON.parse(reader.result);
+            if (!Array.isArray(poems) || poems.length === 0) throw new Error('empty');
+            const container = document.getElementById('poems-container');
+            container.innerHTML = '';
+            poems.forEach(function (p, idx) {
+              container.appendChild(buildPoemSection(p, idx + 1));
+            });
+            rebuildTOC();
+            showStatus('امپورٹ کامیاب ہو گیا');
+          } catch (e) {
+            showStatus('فائل پڑھنے میں مسئلہ ہوا — درست JSON فائل منتخب کریں', true);
+          }
+        };
+        reader.readAsText(file);
+      }
+
+      // ===== Add / Delete =====
+      function addNewPoem() {
+        const lang = document.getElementById('newLang').value || 'ur';
+        const title = document.getElementById('newTitle').value.trim();
+        const meta = document.getElementById('newMeta').value.trim() || 'تخلیق کار: احمد مسعود قریشی';
+        const body = document.getElementById('newBody').value.trim();
+
+        if (!body) {
+          showStatus('نظم کا متن لکھیں', true);
+          return;
+        }
+
+        const container = document.getElementById('poems-container');
+        const num = container.querySelectorAll('.poem').length + 1;
+        const section = buildPoemSection({ title: title, meta: meta, body: body, lang: lang }, num);
+        container.appendChild(section);
+        rebuildTOC();
+        clearAddForm();
+        showStatus('نئی نظم شامل ہو گئی');
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function clearAddForm() {
+        document.getElementById('newTitle').value = '';
+        document.getElementById('newBody').value = '';
+        document.getElementById('newLang').value = 'ur';
+      }
+
+      function deletePoemSection(section) {
+        if (!confirm('کیا آپ واقعی اس نظم کو حذف کرنا چاہتے ہیں؟')) return;
+        lastDeleted = { html: section.outerHTML, nextId: section.nextElementSibling ? section.nextElementSibling.id : null };
+        section.remove();
+        rebuildTOC();
+        showStatus('نظم حذف ہو گئی');
+      }
+
+      // ===== Reset =====
+      function resetToOriginal() {
+        if (!confirm('تمام تبدیلیاں مٹا کر اصل ورژن لوڈ ہوگا۔ جاری رکھیں؟')) return;
+        localStorage.removeItem(STORAGE_KEY);
+        location.reload();
+      }
+
+      // ===== Init & Event wiring (event delegation — no inline onclick) =====
+      document.getElementById('btn-edit-toggle').addEventListener('click', toggleEditMode);
+      document.getElementById('btn-save').addEventListener('click', savePoems);
+      document.getElementById('btn-print').addEventListener('click', function () { window.print(); });
+      document.getElementById('btn-reset').addEventListener('click', resetToOriginal);
+      document.getElementById('btn-export').addEventListener('click', exportPoems);
+      document.getElementById('btn-import').addEventListener('click', function () {
+        document.getElementById('importFileInput').click();
+      });
+      document.getElementById('importFileInput').addEventListener('change', function (e) {
+        const file = e.target.files && e.target.files[0];
+        if (file) importPoemsFromFile(file);
+        e.target.value = '';
+      });
+      document.getElementById('btn-add-poem').addEventListener('click', addNewPoem);
+      document.getElementById('btn-clear-form').addEventListener('click', clearAddForm);
+
+      document.getElementById('poems-container').addEventListener('click', function (e) {
+        const btn = e.target.closest('.delete-btn');
+        if (btn) deletePoemSection(btn.closest('.poem'));
+      });
+
+      // Load saved version if present, otherwise build TOC from the built-in poems
+      if (!loadPoems()) {
+        rebuildTOC();
+      }
+    })();
+  </script>
+</body>
+</html>
